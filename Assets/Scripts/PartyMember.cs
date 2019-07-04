@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Agent : MonoBehaviour
+public class PartyMember : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] int actionPointsAvailable = 4;
-    [SerializeField] float padding = 1f;
+    [SerializeField] float padding = 0.3f;
     [SerializeField] bool isSelected = false;
 
     float xMin;
@@ -28,7 +28,6 @@ public class Agent : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Debug.Log("MOUSEDOWN");
         isSelected = true;
     }
 
@@ -45,7 +44,6 @@ public class Agent : MonoBehaviour
             return;
         }
 
-        Debug.Log("moving.");
         var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
 
