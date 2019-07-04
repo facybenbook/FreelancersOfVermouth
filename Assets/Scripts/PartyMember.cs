@@ -20,22 +20,25 @@ public class PartyMember : MonoBehaviour
         SetupMoveBoundaries();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
     }
 
-    public void OnMouseDown()
+    public void Select()
     {
         isSelected = true;
     }
 
-    void incrementActionPoints()
+    public void Deselect()
+    {
+        isSelected = false;
+    }
+
+    void DecrementActionPoints()
     {
         actionPointsAvailable -= 1;
     }
-
 
     private void Move()
     {

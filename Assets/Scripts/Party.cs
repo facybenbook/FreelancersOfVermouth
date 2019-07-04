@@ -8,21 +8,23 @@ public class Party : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("lets party");
         GameObject characters = GameObject.FindGameObjectWithTag("Characters");
         party.AddRange(characters.GetComponentsInChildren<PartyMember>());
-
-        Debug.Log(party.Count);
-
-        foreach (PartyMember partyMember in party)
-        {
-            Debug.Log("party member");
-        }
-
+        SelectPartyMember();
     }
 
-    void Update()
+    public void SelectPartyMember(PartyMember memberToSelect = null)
     {
-        
+        Debug.Log("in SelectPartyMember");
+        foreach (PartyMember partyMember in party)
+        {
+            if (partyMember == memberToSelect) 
+            {
+                partyMember.Select();
+            } else
+            {
+                partyMember.Deselect();
+            }
+        }
     }
 }

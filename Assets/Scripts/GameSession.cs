@@ -7,15 +7,5 @@ public class GameSession : MonoBehaviour
 {
     [SerializeField] bool playerStarts = true;
 
-    bool playerTurn = true;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    bool isPlayerTurn = true;
 }
